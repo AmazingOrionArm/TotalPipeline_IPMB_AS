@@ -1,0 +1,119 @@
+
+#chrView plot
+
+chrvwlist=read.table("chrView_list.txt",sep='\t', stringsAsFactors=FALSE)
+
+n_rain=nrow(chrvwlist)
+cl <- rainbow(n_rain)
+viewfile1=read.table(chrvwlist[1,2],sep='\t',header=T)
+cgt=viewfile1$meanCG[which(!is.na(viewfile1$meanCG))]
+chgt=viewfile1$meanCHG[which(!is.na(viewfile1$meanCHG))]
+chht=viewfile1$meanCHH[which(!is.na(viewfile1$meanCHH))]
+y_cg=max(cgt)*1.5*100
+y_chg=max(chgt)*1.5*100
+y_chh=max(chht)*1.5*100
+
+#CG
+outfile=paste("./chrViewq_CG.png",sep="")
+bitmap(outfile,type="png16m",height=2,width=8,res=400)
+
+plot(NA,ylab='CG methylation levels(%)',xlab="Chromosome",col='white',pch=19,type='p',cex.main = 1,frame = FALSE,ylim=c(0,y_cg),xlim=c(0,nrow(viewfile1)),xaxt="n",cex=1.5)
+
+for (i in 1:nrow(chrvwlist)){
+	name=chrvwlist[i,1]
+	file=chrvwlist[i,2]
+	viewfile=read.table(file,sep='\t',header=T)
+	
+	chr=unique(viewfile$chromosome)
+	for (j in chr){
+		sub=viewfile[viewfile$chromosome==j,]
+		lines(sub$Position,sub$meanCG*100,lwd=0.5,col= cl[i])
+		#last row
+		abline(v=sub[nrow(sub),1]+0.5,col="grey",lwd=0.5)
+		#label
+		labsite=sub[as.integer(nrow(sub)/2),1]
+		lab=sub$chromosome[1]
+		sta_p=sub[1,1]
+		end_p=sub[(nrow(sub)),1]
+
+axis(1,at=labsite ,label=lab,tick=F)
+axis(1,at=sta_p ,label=FALSE)
+axis(1,at=end_p ,label=FALSE)
+
+xx<-c(sta_p,end_p)
+axis(1,at=xx,labels=F)
+}
+}
+legend("topright", legend = t(chrvwlist[1]), col = t(cl), lwd = 1,cex = 0.5)
+dev.off()
+
+
+#CHG
+outfile=paste("./chrViewq_CHG.png",sep="")
+bitmap(outfile,type="png16m",height=2,width=8,res=400)
+
+plot(NA,ylab='CHG methylation levels(%)',xlab="Chromosome",col='white',pch=19,type='p',cex.main = 1,frame = FALSE,ylim=c(0,y_chg),xlim=c(0,nrow(viewfile1)),xaxt="n",cex=1.5)
+
+for (i in 1:nrow(chrvwlist)){
+	name=chrvwlist[i,1]
+	file=chrvwlist[i,2]
+	viewfile=read.table(file,sep='\t',header=T)
+	
+	chr=unique(viewfile$chromosome)
+	for (j in chr){
+		sub=viewfile[viewfile$chromosome==j,]
+		lines(sub$Position,sub$meanCHG*100,lwd=0.5,col= cl[i])
+		#last row
+		abline(v=sub[nrow(sub),1]+0.5,col="grey",lwd=0.5)
+		#label
+		labsite=sub[as.integer(nrow(sub)/2),1]
+		lab=sub$chromosome[1]
+		sta_p=sub[1,1]
+		end_p=sub[(nrow(sub)),1]
+
+axis(1,at=labsite ,label=lab,tick=F)
+axis(1,at=sta_p ,label=FALSE)
+axis(1,at=end_p ,label=FALSE)
+
+xx<-c(sta_p,end_p)
+axis(1,at=xx,labels=F)
+}
+}
+legend("topright", legend = t(chrvwlist[1]), col = t(cl), lwd = 1,cex = 0.5)
+dev.off()
+
+
+#CHH
+outfile=paste("./chrViewq_CHH.png",sep="")
+bitmap(outfile,type="png16m",height=2,width=8,res=400)
+
+plot(NA,ylab='CHH methylation levels(%)',xlab="Chromosome",col='white',pch=19,type='p',cex.main = 1,frame = FALSE,ylim=c(0,y_chh),xlim=c(0,nrow(viewfile1)),xaxt="n",cex=1.5)
+
+for (i in 1:nrow(chrvwlist)){
+	name=chrvwlist[i,1]
+	file=chrvwlist[i,2]
+	viewfile=read.table(file,sep='\t',header=T)
+	
+	chr=unique(viewfile$chromosome)
+	for (j in chr){
+		sub=viewfile[viewfile$chromosome==j,]
+		lines(sub$Position,sub$meanCHH*100,lwd=0.5,col= cl[i])
+		#last row
+		abline(v=sub[nrow(sub),1]+0.5,col="grey",lwd=0.5)
+		#label
+		labsite=sub[as.integer(nrow(sub)/2),1]
+		lab=sub$chromosome[1]
+		sta_p=sub[1,1]
+		end_p=sub[(nrow(sub)),1]
+
+axis(1,at=labsite ,label=lab,tick=F)
+axis(1,at=sta_p ,label=FALSE)
+axis(1,at=end_p ,label=FALSE)
+
+xx<-c(sta_p,end_p)
+axis(1,at=xx,labels=F)
+}
+}
+legend("topright", legend = t(chrvwlist[1]), col = t(cl), lwd = 1,cex = 0.5)
+dev.off()
+
