@@ -18,4 +18,5 @@ Before using Toolkit, system requirement and some kits that need to be installed
 
 * Essential Kits
   * Python **2.7** or above
-  >     123
+  * Python modules：pandas, numpy, matplotlib, math, scipy, argparse, glob, pyBigWig, collections, gzip, re, PyQt5
+  * R **3.5.1** or above
