@@ -1,2 +1,1 @@
-# TotalPipeline_IPMB_AS
-
+# DNA Methylation Toolkit
