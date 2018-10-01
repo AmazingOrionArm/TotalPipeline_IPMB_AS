@@ -104,7 +104,7 @@ For example, if a user want to analysis arabidopsis sample, and he want to set r
 
 Users also can choose which tools you want to use.
 
-After setting essential parameters, program will ask you 'want to use OOO tool? (y/n)' one by one, if you want use it, just enter 'y'
+After setting essential parameters, program will ask you 'OOO Analysis? (y/n)' one by one, if you want use it, just enter 'y'
 
 There are some tools in this Toolkits
 * Heatmap & PCA
