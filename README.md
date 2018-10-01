@@ -76,3 +76,26 @@ User can choose nongui or gui mode to use this Toolkit
 
 * Non-gui mode
 using commandline
+  * program path：Path of 'nongui.py' (This Toolkits main program(non-gui mode))
+  * input_gene_name：Path of input_gene (Your input gene file)
+  * Optional Parameters：Analysis parameters. If you not use it, it will setting by default value
+>     python [program path] [input_gene_name] [Optional Parameters]
+
+Parameters of this program
+>     positional arguments:
+>       input_gene_name       path of input gene
+
+>     optional arguments:
+>       -h, --help            show this help message and exit
+>       -d DEPTH              min size of #C+#T
+>       -r REGION             size of region
+>       -q QUAIFIED           min number of region member
+>       -hc HEATMAP_CUTOFF    Heatmap_cutoff
+>       -dcgc DMR_CG_CUTOFF   DMR_CG_cutoff
+>       -dchhc DMR_CHH_CUTOFF DMR_CHH_cutoff
+>       -dchgc DMR_CHG_CUTOFF DMR_CHG_cutoff
+>       -b BIN_SIZE           resolution of chrView and Metaplot
+>       -p PROMOTER_SIZE      promoter_size
+
+For example, if a user want to analysis arabidopsis sample, and he want to set region size and dmr's cut off value, he need input this command
+>     python nongui.py arabidopsis.gtf -r 800 -dchhc 0.1 -dchgc 0.02
