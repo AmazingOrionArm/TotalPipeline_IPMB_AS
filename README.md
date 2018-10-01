@@ -61,3 +61,11 @@ Use the following commands one by one
 >     pip install gzip
 >     pip install re
 >     pip install PyQt5
+
+# How to use
+User can choose nongui or gui mode to use this Toolkit
+* GUI mode
+  * See GUI description.docx for details.  
+
+* Non-gui mode
+using commandline
