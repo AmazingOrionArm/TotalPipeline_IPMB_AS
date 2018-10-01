@@ -83,19 +83,21 @@ using commandline
 
 Parameters of this program
 >     positional arguments:
->       input_gene_name       path of input gene
+>       input_gene_name           path of input gene
 
 >     optional arguments:
->       -h, --help            show this help message and exit
->       -d DEPTH              min size of #C+#T
->       -r REGION             size of region
->       -q QUAIFIED           min number of region member
->       -hc HEATMAP_CUTOFF    Heatmap_cutoff
->       -dcgc DMR_CG_CUTOFF   DMR_CG_cutoff
->       -dchhc DMR_CHH_CUTOFF DMR_CHH_cutoff
->       -dchgc DMR_CHG_CUTOFF DMR_CHG_cutoff
->       -b BIN_SIZE           resolution of chrView and Metaplot
->       -p PROMOTER_SIZE      promoter_size
+>       -h, --help                show this help message and exit
+>       -d DEPTH                  min size of #C+#T
+>       -r REGION                 size of region
+>       -q QUAIFIED               min number of region member
+>       -hcgc HEATMAP_CG_CUTOFF   Heatmap_cutoff
+>       -hchhc HEATMAP_CHH_CUTOFF Heatmap_cutoff
+>       -hchgc HEATMAP_CHG_CUTOFF Heatmap_cutoff
+>       -dcgc DMR_CG_CUTOFF       DMR_CG_cutoff
+>       -dchhc DMR_CHH_CUTOFF     DMR_CHH_cutoff
+>       -dchgc DMR_CHG_CUTOFF     DMR_CHG_cutoff
+>       -b BIN_SIZE               resolution of chrView and Metaplot
+>       -p PROMOTER_SIZE          promoter_size
 
 For example, if a user want to analysis arabidopsis sample, and he want to set region size and dmr's cut off value, he need input this command
 >     python nongui.py arabidopsis.gtf -r 800 -dchhc 0.1 -dchgc 0.02
@@ -115,11 +117,11 @@ There are some tools in this Toolkits
 * Chromosome View
   * View the genome wide methylation level distribution by chromosomes
   * Also can view mean difference of samples methylation level between two different group of samples
-  * If user choose this tool, program will ask you which group of samples is experiment group and which is control group, user just need enter the group name
+  * If user choose this tool, program will ask you which group of samples is experimental group and which is control group, user just need enter the group name
 * Metaplot
   * View the methylation level distribution on specific genomic feature and its nearby area
   * Also can view mean difference of samples methylation level between two groups
-  * If user choose this tool, program will ask you which group of samples is experiment group and which is control group, user just need enter the group name
+  * If user choose this tool, program will ask you which group of samples is experimental group and which is control group, user just need enter the group name
   * Other than this, program will also ask you choose one specific genomic feature, user just need enter the genomic feature name
 
 # The analysis result
