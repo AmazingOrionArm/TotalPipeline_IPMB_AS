@@ -99,3 +99,28 @@ Parameters of this program
 
 For example, if a user want to analysis arabidopsis sample, and he want to set region size and dmr's cut off value, he need input this command
 >     python nongui.py arabidopsis.gtf -r 800 -dchhc 0.1 -dchgc 0.02
+
+Users also can choose which tools you want to use.
+
+After setting essential parameters, program will ask you 'want to use OOO tool? (y/n)' one by one, if you want use it, just enter 'y'
+
+There are some tools in this Toolkits
+* Heatmap & PCA
+  * Heatmap：Visualizing methylation level. Easily to overview the methylation level distribution
+  * PCA：Which samples from similar environment (have much similar features) will be concentrated
+* Differentially Methylated Region (required)
+  * Find which regions exist significant methylation level difference
+* Differentially Methylated Gene
+  * Which genes are ‘overlap’ with DMR. Means find which genes are exist significant methylation level difference
+* Chromosome View
+  * View the genome wide methylation level distribution by chromosomes
+  * Also can view mean difference of samples methylation level between two different group of samples
+  * If user choose this tool, program will ask you which group of samples is experiment group and which is control group, user just need enter the group name
+* Metaplot
+  * View the methylation level distribution on specific genomic feature and its nearby area
+  * Also can view mean difference of samples methylation level between two groups
+  * If user choose this tool, program will ask you which group of samples is experiment group and which is control group, user just need enter the group name
+  * Other than this, program will also ask you choose one specific genomic feature, user just need enter the genomic feature name
+
+# The analysis result
+Analysis result will be saving in main folder (where is nongui.py in it) in default
