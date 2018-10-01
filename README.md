@@ -37,6 +37,12 @@ for Linux (Ubuntu, also in Mac OS X), using command line
 or
 >     sudo apt-get install python3.6
 
+## Download and install R
+>     https://cran.r-project.org/mirrors.html
+  * In this link, choose one mirror that is near your location, and choose version which environment you are
+or in Mac OS X and Linux, using this command
+>     sudo apt-get install r-base
+
 ## Download and install pip
 for windows
 >     python get-pip.py
